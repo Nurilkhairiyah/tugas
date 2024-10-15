@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Edit Data Pengguna</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #6ba0d4;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Edit Data Pengguna</h2>
+      <form action="/update/<%= user.id %>" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menyimpan perubahan?')">
+        <div class="form-group">
+          <label for="nama">Nama:</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            required
+            class="form-control"
+            value="<%= user.nama %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            value="<%= user.email %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telepon:</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            class="form-control"
+            value="<%= user.phone %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </form>
+    </div>
+  </body>
+</html>
